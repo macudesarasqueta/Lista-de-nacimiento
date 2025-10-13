@@ -30,6 +30,67 @@
       text-align: center;
     }
 
+    .bienvenida {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #FFE6E6, #E8F8F5, #FFF5CC);
+  border-radius: 25px;
+  padding: 35px 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  color: #444;
+  animation: floatIn 1s ease;
+  border: 2px solid rgba(255,255,255,0.6);
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bienvenida h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.bienvenida p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.bienvenida strong {
+  color: #E76F51; /* resalta la fecha */
+}
+
+.iconos {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.iconos span {
+  margin: 0 5px;
+  animation: bounce 2s infinite;
+}
+
+.decoracion {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.decoracion span {
+  margin: 0 6px;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+
+
     h1 {
         color: #444;
         text-align: center;
@@ -125,6 +186,33 @@
 <body>
     <div class="container">
     <header>
+        <!-- 🌈 Mensaje de bienvenida -->
+<div class="bienvenida">
+    <div class="iconos">
+      <span>🍼</span>
+      <span>🧸</span>
+      <span>⭐</span>
+      <span>👶</span>
+    </div>
+    
+    <h2>💖 ¡Gracias por acompañarnos en esta dulce espera! 💖</h2>
+    <p>
+      Con mucha ilusión y amor, nos preparamos para recibir a nuestro bebé 🌈,
+      que llegará el <strong>29 de marzo de 2026</strong>.  
+      Agradecemos de corazón por ser parte de este momento tan especial y por colaborar 
+      con tanto cariño en la lista de regalos 🎁.  
+      ¡Cada detalle que elijan nos acerca un poquito más a ese hermoso día! 💕
+    </p>
+  
+    <div class="decoracion">
+      <span>🐣</span>
+      <span>🧦</span>
+      <span>🧢</span>
+      <span>🍼</span>
+    </div>
+  </div>
+  
+  
         <h1>Lista de Nacimiento</h1>
     </header>
     <main>
