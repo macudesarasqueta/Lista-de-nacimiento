@@ -226,25 +226,6 @@
         border-top-right-radius: 20px;
     }
 
-    .producto.comprado {
-        opacity: 0.6;
-        pointer-events: none; /* bloquea todo dentro de la tarjeta */
-        position: relative;
-    }
-
-    .producto.comprado::after {
-        content: "Comprado";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: #4caf50;
-        color: white;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-size: 0.9rem;
-        font-weight: bold;
-    }
-
     .info {
       padding: 20px;
       text-align: center;
@@ -283,26 +264,23 @@
       background-color: #F8C8DC;
     }
 
-    
+    .producto.comprado {
+        opacity: 0.6;
+        pointer-events: none; /* bloquea clics */
+        position: relative;
+    }
 
-    .btn-comprado {
+    .producto.comprado::after {
+        content: "Comprado";
         position: absolute;
         top: 10px;
         right: 10px;
-        padding: 6px 12px;
-        border: none;
-        border-radius: 25px;
-        background-color: #4caf50;
+        background: #28ae59;
         color: white;
+        padding: 5px 10px;
+        border-radius: 12px;
         font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.2s ease, background 0.3s ease;
-        z-index: 10; /* siempre encima del contenido */
-    }
-
-    .btn-comprado:hover {
-        transform: scale(1.1);
-        background-color: #388e3c;
+        font-size: 0.9rem;
     }
     
   </style>
@@ -343,6 +321,9 @@
     </header>
     <main>
         <div class="productos">
+
+            <!-- Agregar clase no-disponible cuando el producto ya fue comprado
+            ej <div class="producto comprado"> -->
             
             <!-- Producto 1 -->
             <div class="producto">
@@ -353,7 +334,6 @@
                     <p class="descripcion">Cobertura total desde los dedos de los pies hasta la cabeza.</p>
                     <a href="https://articulo.mercadolibre.com.ar/MLA-2146122154-porta-infante-polar-piel-calentito-invierno-_JM?attributes=PATTERN_NAME:TGlzbw==,COLOR_SECONDARY_COLOR:QmVpZ2U=&picker=true" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 2 -->
@@ -365,7 +345,6 @@
                     <p class="descripcion">El Fular Prearmado APPA LALA es una remera de porteo ergonómica, fácil de poner y práctica de usar.</p>
                     <a href="https://www.mercadolibre.com.ar/appa-lala-fular-prearmado-grisazul-fular-prearmado-s/p/MLA50891418?product_trigger_id=MLA50872860&pdp_filters=item_id%3AMLA1504433099&applied_product_filters=MLA50872856&picker=true&quantity=1" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 3 -->
@@ -377,7 +356,6 @@
                     <p class="descripcion">Mochila maternal multifuncional con cambiador y cuna.</p>
                     <a href="https://articulo.mercadolibre.com.ar/MLA-1460828681-mochila-bolso-maternal-cambiador-cuna-multifuncion-3-en-1-_JM?attributes=FABRIC_DESIGN%3ATGlzbw%3D%3D%2CCOLOR_SECONDARY_COLOR%3AR3Jpcw%3D%3D&quantity=1&picker=true&has_official_store=false&highlight=false&searchVariation=182228166200&headerTopBrand=false" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 4 -->
@@ -389,7 +367,6 @@
                     <p class="descripcion">Set Alimentacion Bebe Plato Antideslizante Silicona Completo.</p>
                     <a href="https://articulo.mercadolibre.com.ar/MLA-2004622524-plato-antivuelco-con-cubiertos-silicona-alimentos-bebe-ninos-_JM?has_official_store=false&highlight=false&searchVariation=186816921387&headerTopBrand=false#polycard_client=search-nordic&searchVariation=186816921387&search_layout=grid&position=27&type=item&tracking_id=33dd40f3-6985-4158-89b3-97eeb032bd73" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 5 -->
@@ -401,7 +378,6 @@
                     <p class="descripcion">Vaso Chicco Antiderrames.</p>
                     <a href="https://www.mercadolibre.com.ar/chicco-perfect-cup-azul-perfect-cup-1-unidad/p/MLA28019616?product_trigger_id=MLA22623896&picker=true&has_official_store=false&highlight=true&headerTopBrand=true&quantity=1" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 6 -->
@@ -413,7 +389,6 @@
                     <p class="descripcion">Body de bebe Diseño Remera Argentina.</p>
                     <a href="https://articulo.mercadolibre.com.ar/MLA-1610711986-body-bebe-diseno-remera-argentina-varios-talles-_JM?attributes=COLOR_SECONDARY_COLOR%3AQmxhbmNv%2CSIZE%3AMy02IE0%3D&quantity=1&picker=true&has_official_store=false&highlight=false&searchVariation=179539307758&headerTopBrand=false" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 7 -->
@@ -425,7 +400,6 @@
                     <p class="descripcion">Protectores mamarios lavables + bolsa para lavar junto al corpiño.</p>
                     <a href="https://www.mercadolibre.com.ar/protectores-mamarios-lavables--bolsa--para-lavado/up/MLAU212938040?has_official_store=false&highlight=false&headerTopBrand=true#polycard_client=search-nordic&search_layout=grid&position=42&type=product&tracking_id=c4c29c10-7af5-404d-97c2-c24314b16bee&wid=MLA755341778&sid=search" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 8 -->
@@ -437,7 +411,6 @@
                     <p class="descripcion">Set higuiene bebe.</p>
                     <a href="https://articulo.mercadolibre.com.ar/MLA-917196297-set-de-regalo-bebe-higiene-manicura-super-completo-kit-_JM?has_official_store=false&highlight=false&searchVariation=82445620201&headerTopBrand=false#polycard_client=search-nordic&searchVariation=82445620201&search_layout=grid&position=33&type=item&tracking_id=825c4e62-dac3-49eb-be96-8273074c6e16" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
             <!-- Producto 9 -->
@@ -449,7 +422,6 @@
                     <p class="descripcion">Ideales para organizar el espacio de cambio de pañal para guardar los productos de higiene del bebé, para guardar ropa, accesorios y juguetes.</p>
                     <a href="https://articulo.mercadolibre.com.ar/MLA-896394830-panalero-bebe-cesto-organizador-contenedor-relleno-xl-_JM?attributes=COLOR_SECONDARY_COLOR%3AQXp1bCBzcGFjZQ%3D%3D&quantity=1&picker=true" target="_blank" class="boton">Ver producto</a>
                 </div>
-                <button class="btn-comprado">✔ Comprado</button>
             </div>
 
         
