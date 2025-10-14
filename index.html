@@ -92,6 +92,86 @@
         50% { transform: translateY(-6px); }
     }
 
+    .btn-baby {
+        background: linear-gradient(135deg, #6EC6FF, #2196F3);
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 1rem;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.3s ease;
+        }
+        
+    .btn-baby:hover {
+        background: linear-gradient(135deg, #42A5F5, #1976D2);
+        transform: scale(1.05);
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+
+    /* Modal celeste */
+    .alerta-baby {
+    background: linear-gradient(135deg, #D9F6FF, #E8FBFF, #F2FDFF);
+    color: #16324a;
+    border-radius: 20px;
+    padding: 25px 30px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.6);
+    animation: popIn 0.4s ease;
+    position: relative;
+    }
+    .icono-caja {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    }
+    .alerta-baby h2 { margin-bottom: 10px; }
+    .alerta-baby p { margin: 8px 0; line-height: 1.6; }
+    .alerta-baby .nota { font-size: 0.95rem; color: #164b6b; }
+
+    /* Botones dentro del modal */
+    .btn-calendario {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #03A9F4;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    }
+    .btn-calendario:hover { background: #0288D1; }
+
+    /* Botón de cerrar */
+    .close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #555;
+    }
+
+    /* Animación */
+    @keyframes popIn {
+    from { transform: translateY(-15px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+    }
+
     h1 {
         color: #444;
         text-align: center;
@@ -182,6 +262,7 @@
     .boton:hover {
       background-color: #F8C8DC;
     }
+    
   </style>
 </head>
 <body>
@@ -204,6 +285,9 @@
             con tanto cariño en la lista de regalos 🎁.  
             ¡Cada detalle que elijan nos acerca un poquito más a ese hermoso día! 💕
         </p>
+
+        <!-- <p><strong>Haz clic abajo para ver la invitación al Baby Shower.</strong></p>
+        <button id="btnInvitacion" class="btn-baby">Ver invitación 💌</button> -->
     
         <div class="decoracion">
             <span>🐣</span>
@@ -212,7 +296,7 @@
             <span>🍼</span>
             </div>
         </div>
-  
+        
         <h1>Lista de Nacimiento</h1>
     </header>
     <main>
@@ -307,6 +391,15 @@
             </div>
 
             <!-- Producto 9 -->
+            <div class="producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_621839-MLA94215321797_102025-F.webp" alt="Pañalero">
+                <div class="info">
+                    <h2>Pañalero bebe. Color azul space.</h2>
+                    <p class="precio">$20.648,25</p>
+                    <p class="descripcion">Ideales para organizar el espacio de cambio de pañal para guardar los productos de higiene del bebé, para guardar ropa, accesorios y juguetes.</p>
+                    <a href="https://articulo.mercadolibre.com.ar/MLA-896394830-panalero-bebe-cesto-organizador-contenedor-relleno-xl-_JM?attributes=COLOR_SECONDARY_COLOR%3AQXp1bCBzcGFjZQ%3D%3D&quantity=1&picker=true" target="_blank" class="boton">Ver producto</a>
+                </div>
+            </div>
 
         
         </div>
@@ -316,5 +409,51 @@
         <p>Envios a Gurruchaga 274 5-5, Villa Crespo, Capital Federal</p>
     </footer>
     </div>
+
+    <!-- MODAL / ALERTA: ahora está fuera del container -->
+    <div id="babyOverlay" class="overlay" style="display: none;">
+        <div class="alerta-baby" role="dialog" aria-modal="true" aria-labelledby="babyTitle">
+          <button id="closeBaby" class="close" aria-label="Cerrar invitación">&times;</button>
+          <div class="icono-caja">🍼👶</div>
+          <h2 id="babyTitle">¡Estás invitado/a al Baby Shower!</h2>
+          <p>Te esperamos el <strong>17 de enero de 2026</strong> para celebrar juntos la llegada del bebé. 💙</p>
+          <p class="nota">📍 Lugar: Casa de los anfitriones<br>🕔 Hora: 17:00</p>
+        </div>
+      </div>
+
+      <!-- <script>
+        const overlay = document.getElementById('babyOverlay');
+        const openBtn = document.getElementById('btnInvitacion');
+        const closeBtn = document.getElementById('closeBaby');
+        
+        // Mostrar el modal
+        openBtn.addEventListener('click', () => {
+          overlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+        
+        // Cerrar modal al hacer clic en el botón "×"
+        closeBtn.addEventListener('click', () => {
+          overlay.style.display = 'none';
+          document.body.style.overflow = '';
+        });
+        
+        // Cerrar si hace clic fuera del modal
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && overlay.style.display === 'flex') {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+        </script> -->
+        
 </body>
 </html>
